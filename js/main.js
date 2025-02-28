@@ -397,10 +397,122 @@
 
 })();
 
+//delivery pop_up
+(() => {
+
+  let delivery = document.querySelector('.js_delivery');
+  let deliveryClose = document.querySelector('.js_delivery_box_head_close');
+  let deliveryButton = document.querySelector('.js_delivery_button');
+  let deliveryBox = document.querySelector('.js_delivery_box');
 
 
-//like pop_up
+  if (deliveryButton) {
+    deliveryButton.addEventListener('click', function () {
+      delivery.classList.toggle('active');
+    })
+    deliveryClose.addEventListener('click', function () {
+      delivery.classList.remove('active');
+    })
+    delivery.style.height = document.body.scrollHeight - 96 + 'px';
+  }
 
+  delivery.addEventListener('click', (e) => {
+    const lkEl = e.composedPath().includes(deliveryBox);
+    if (!lkEl) {
+      delivery.classList.remove('active');
+    }
+
+  })
+  document.addEventListener('click', (e) => {
+    const lkEl = e.composedPath().includes(deliveryBox);
+    const gambLk = e.composedPath().includes(deliveryButton);
+    if (!lkEl && !gambLk) {
+      delivery.classList.remove('active');
+    }
+
+  })
+
+
+})();
+
+
+
+//returnGoods pop_up
+(() => {
+
+  let returnGoods = document.querySelector('.js_returnGoods');
+  let returnGoodsClose = document.querySelector('.js_returnGoods_box_head_close');
+  let returnGoodsButton = document.querySelector('.js_returnGoods_button');
+  let returnGoodsBox = document.querySelector('.js_returnGoods_box');
+
+
+  if (returnGoodsButton) {
+    returnGoodsButton.addEventListener('click', function () {
+      returnGoods.classList.toggle('active');
+    })
+    returnGoodsClose.addEventListener('click', function () {
+      returnGoods.classList.remove('active');
+    })
+    returnGoods.style.height = document.body.scrollHeight - 96 + 'px';
+  }
+
+  returnGoods.addEventListener('click', (e) => {
+    const lkEl = e.composedPath().includes(returnGoodsBox);
+    if (!lkEl) {
+      returnGoods.classList.remove('active');
+    }
+
+  })
+  document.addEventListener('click', (e) => {
+    const lkEl = e.composedPath().includes(returnGoodsBox);
+    const gambLk = e.composedPath().includes(returnGoodsButton);
+    if (!lkEl && !gambLk) {
+      returnGoods.classList.remove('active');
+    }
+
+  })
+
+
+})();
+
+
+//payment pop_up
+(() => {
+
+  let payment = document.querySelector('.js_payment');
+  let paymentClose = document.querySelector('.js_payment_box_head_close');
+  let paymentButton = document.querySelector('.js_payment_button');
+  let paymentBox = document.querySelector('.js_payment_box');
+
+
+  if (paymentButton) {
+    paymentButton.addEventListener('click', function () {
+      payment.classList.toggle('active');
+    })
+    paymentClose.addEventListener('click', function () {
+      payment.classList.remove('active');
+    })
+    payment.style.height = document.body.scrollHeight - 96 + 'px';
+  }
+
+  payment.addEventListener('click', (e) => {
+    const lkEl = e.composedPath().includes(paymentBox);
+    if (!lkEl) {
+      payment.classList.remove('active');
+    }
+
+  })
+  document.addEventListener('click', (e) => {
+    const lkEl = e.composedPath().includes(paymentBox);
+    const gambLk = e.composedPath().includes(paymentButton);
+    if (!lkEl && !gambLk) {
+      payment.classList.remove('active');
+    }
+
+  })
+
+
+})();
 
 
 

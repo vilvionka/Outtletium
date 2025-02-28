@@ -49,6 +49,15 @@ $('.bestsellers_box_slider').slick({
   nextArrow: $('.bestsellers_slider_arrow_next'),
 });
 
+$('.catalog_head_slider').slick({
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  variableWidth: true,
+  prevArrow: $('.catalog_head_slider_arrow_prev'),
+  nextArrow: $('.catalog_head_slider_arrow_next'),
+});
+
 
 
 $('.main_slider').slick({
@@ -64,4 +73,103 @@ $('.main_slider').slick({
     }
   ]
 });
+
+$(function () {
+  var Accordion = function (el, multiple) {
+    this.el = el || {};
+    // more then one submenu open?
+    this.multiple = multiple || false;
+
+    var accordionHeader = this.el.find('.delivery_accordion_header');
+    accordionHeader.on('click', {
+      el: this.el,
+      multiple: this.multiple
+    },
+      this.dropdown);
+  };
+
+  Accordion.prototype.dropdown = function (e) {
+    var $el = e.data.el,
+      $this = $(this),
+      //this is the ul.submenuItems
+      $next = $this.next();
+
+    $next.slideToggle();
+    $this.parent().toggleClass('open');
+
+    if (!e.data.multiple) {
+      //show only one menu at the same time
+      $el.find('.delivery_accordion_body').not($next).slideUp().parent().removeClass('open');
+    }
+  }
+
+  var accordion = new Accordion($('.delivery_accordion'), false);
+});
+
+$(function () {
+  var Accordion = function (el, multiple) {
+    this.el = el || {};
+    // more then one submenu open?
+    this.multiple = multiple || false;
+
+    var accordionHeader = this.el.find('.returnGoods_accordion_header');
+    accordionHeader.on('click', {
+      el: this.el,
+      multiple: this.multiple
+    },
+      this.dropdown);
+  };
+
+  Accordion.prototype.dropdown = function (e) {
+    var $el = e.data.el,
+      $this = $(this),
+      //this is the ul.submenuItems
+      $next = $this.next();
+
+    $next.slideToggle();
+    $this.parent().toggleClass('open');
+
+    if (!e.data.multiple) {
+      //show only one menu at the same time
+      $el.find('.returnGoods_accordion_body').not($next).slideUp().parent().removeClass('open');
+    }
+  }
+
+  var accordion = new Accordion($('.returnGoods_accordion'), false);
+});
+
+
+$(function () {
+  var Accordion = function (el, multiple) {
+    this.el = el || {};
+    // more then one submenu open?
+    this.multiple = multiple || false;
+
+    var accordionHeader = this.el.find('.payment_accordion_header');
+    accordionHeader.on('click', {
+      el: this.el,
+      multiple: this.multiple
+    },
+      this.dropdown);
+  };
+
+  Accordion.prototype.dropdown = function (e) {
+    var $el = e.data.el,
+      $this = $(this),
+      //this is the ul.submenuItems
+      $next = $this.next();
+
+    $next.slideToggle();
+    $this.parent().toggleClass('open');
+
+    if (!e.data.multiple) {
+      //show only one menu at the same time
+      $el.find('.payment_accordion_body').not($next).slideUp().parent().removeClass('open');
+    }
+  }
+
+  var accordion = new Accordion($('.payment_accordion'), false);
+});
+
+
 
