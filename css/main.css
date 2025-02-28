@@ -1991,6 +1991,15 @@ footer {
     letter-spacing: 0.8px;
     color: #343434;
   }
+
+  .like {
+    z-index: 13;
+  }
+
+  .like_box {
+    max-width: none;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -2110,6 +2119,15 @@ footer {
 
   .menu {
     top: 66px;
+  }
+
+  .like_box_body .bestsellers_box_item_img {
+    height: 320px;
+  }
+
+  .like_box_body .bestsellers_box_item_size {
+    top: 195px;
+
   }
 }
 
@@ -2379,6 +2397,56 @@ footer {
     bottom: 0;
   }
 
+  .like_box_head {
+    padding: 0 10px 0 10px;
+    height: 66px;
+  }
+
+  .like_box_head_close {
+    top: 21px;
+    right: 10px;
+  }
+
+  .scroll {
+    height: calc(100vh - 30px);
+  }
+
+  .like_box_body {
+    padding: 0px 0px 55px 10px;
+  }
+
+  .like_box_body .bestsellers_box_item {
+    width: calc(50% - 20px);
+    margin-top: 60px;
+  }
+
+  .bestsellers_box_item_discription span {
+    font-size: 14px;
+  }
+
+  .bestsellers_box_item_discription {
+    padding: 0 0px;
+  }
+
+  .bestsellers_box_item_discription a {
+    font-size: 16px;
+  }
+
+  .like_box_body .bestsellers_box_item_size {
+    height: 100px;
+    top: 180px;
+  }
+
+  .bestsellers_box_item_size span {
+    font-size: 16px;
+    margin: 18px 0px;
+  }
+
+  .like_box_body .bestsellers_box_item_img {
+    height: 280px;
+  }
+
+
 }
 
 @media screen and (max-width: 400px) {
@@ -2421,6 +2489,31 @@ footer {
   .footer_box .footer_box_item:nth-child(4) {
     width: 100%;
   }
+
+  .like_box_body .bestsellers_box_item {
+    margin-top: 40px;
+    width: calc(50% - 5px);
+  }
+
+  .like_box_body .bestsellers_box_item_size {
+    height: 80px;
+    top: 150px;
+  }
+
+  .bestsellers_box_item_size span {
+    font-size: 14px;
+    margin: 18px 0px 10px 0;
+  }
+
+  .bestsellers_box_item_size a {
+    margin: 0 12px;
+    font-size: 14px;
+  }
+
+
+  .like_box_body .bestsellers_box_item_img {
+    height: 230px;
+  }
 }
 
 @media screen and (max-width: 370px) {
@@ -2434,4 +2527,15 @@ footer {
     margin-right: initial;
     margin-top: 0px;
   }
+
+  .like_box_body .bestsellers_box_item_size {
+    height: 80px;
+    top: 130px;
+  }
+
+
+  .like_box_body .bestsellers_box_item_img {
+    height: 210px;
+  }
+
 }

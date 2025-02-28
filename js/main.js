@@ -225,6 +225,7 @@
   let likeClose = document.querySelector('.js_like_box_head_close');
   let likeButton = document.querySelector('.js_button_like');
   let likeBoxEl = document.querySelector('.js_like_box');
+  let likeButtonMobail = document.querySelector('.js_menu_mobail_like');
 
 
   if (likeButton) {
@@ -237,6 +238,12 @@
     likeBox.style.height = document.body.scrollHeight - 96 + 'px';
   }
 
+  if(likeButtonMobail){
+    likeButtonMobail.addEventListener('click',function(){
+      likeBox.classList.add('active');
+    })
+  }
+
   likeBox.addEventListener('click', (e) => {
     const lkEl = e.composedPath().includes(likeBoxEl);
     if (!lkEl) {
@@ -247,8 +254,11 @@
   document.addEventListener('click', (e) => {
     const lkEl = e.composedPath().includes(likeBoxEl);
     const gambLk = e.composedPath().includes(likeButton);
+    const likeButtonM = e.composedPath().includes(likeButtonMobail);
     if (!lkEl && !gambLk) {
-      likeBox.classList.remove('active');
+      if(!likeButtonMobail){
+        likeBox.classList.remove('active');
+      }
     }
 
   })
