@@ -1,47 +1,47 @@
 //card animation size box
 (() => {
   let items = document.querySelectorAll('.js_bestsellers_img');
-  
+
 
   if (items) {
-    for(let i = 0; i < items.length; i++){
-      items[i].addEventListener('mouseover', function(){
+    for (let i = 0; i < items.length; i++) {
+      items[i].addEventListener('mouseover', function () {
         this.querySelector('.bestsellers_box_item_size').classList.add('active')
       });
-      items[i].addEventListener('mouseout', function(){
+      items[i].addEventListener('mouseout', function () {
         this.querySelector('.bestsellers_box_item_size').classList.remove('active')
       })
 
     }
   }
 
-  
+
 
 })();
 
 // city header choise
 
 (() => {
-   let city        = document.querySelector('.js_header_place_item');
-   let cityBox     = document.querySelector('.js_header_place_hidden');
-   let cityBoxItem = document.querySelectorAll('.js_header_place_hidden span');
-   let cityBoxElem = document.querySelector('.js_header_place_hidden_box');
+  let city = document.querySelector('.js_header_place_item');
+  let cityBox = document.querySelector('.js_header_place_hidden');
+  let cityBoxItem = document.querySelectorAll('.js_header_place_hidden span');
+  let cityBoxElem = document.querySelector('.js_header_place_hidden_box');
 
-   if(city){
-    city.addEventListener('click', function(){
+  if (city) {
+    city.addEventListener('click', function () {
       cityBox.classList.toggle('active');
-      if(cityBox.classList.contains('active')){
+      if (cityBox.classList.contains('active')) {
         city.classList.add('active');
-      }else{
+      } else {
         city.classList.remove('active');
       }
     })
     cityBox.style.height = document.body.scrollHeight - 96 + 'px';
-   }
+  }
 
-   if(cityBoxItem){
-    for(let i = 0; i < cityBoxItem.length; i++){
-      cityBoxItem[i].addEventListener('click', function(){
+  if (cityBoxItem) {
+    for (let i = 0; i < cityBoxItem.length; i++) {
+      cityBoxItem[i].addEventListener('click', function () {
         cityBoxItem.forEach(el => {
           el.classList.remove('active');
         });
@@ -53,10 +53,10 @@
 
       })
     }
-    
-   }
 
-   document.addEventListener('click', (e) => {
+  }
+
+  document.addEventListener('click', (e) => {
     const lkEl = e.composedPath().includes(city);
     const gambLk = e.composedPath().includes(cityBoxElem);
     if (!lkEl && !gambLk) {
@@ -82,13 +82,14 @@
 (() => {
 
   let burger = document.querySelector('.js_burger');
-  let menu   = document.querySelector('.js_menu');
+  let menu = document.querySelector('.js_menu');
   let menuDinamic = document.querySelector('.js_menu_dinamic')
   let menuBox = document.querySelector('.js_menu_box');
-  
+  let menuCloseMobail = document.querySelector('.js_menu_dinamic_mobail_close')
 
-  if(burger){
-    burger.addEventListener('click', function(){
+
+  if (burger) {
+    burger.addEventListener('click', function () {
       menu.classList.toggle('active');
       menuDinamic.classList.remove('active');
     })
@@ -112,6 +113,12 @@
     }
 
   })
+  if(menuCloseMobail){
+    menuCloseMobail.addEventListener('click',function(){
+      menu.classList.remove('active');
+      menuDinamic.classList.remove('active');
+    })
+  }
 
 
 })();
@@ -122,12 +129,12 @@
 (() => {
 
   let tabItems = document.querySelectorAll('.js_menu_tab_item');
-  let links   = document.querySelectorAll('.js_menu_link');
+  let links = document.querySelectorAll('.js_menu_link');
   let menuDinamic = document.querySelector('.js_menu_dinamic')
 
-  if(tabItems){
-    for(let i = 0; i < tabItems.length; i++){
-      tabItems[i].addEventListener('click', function(){
+  if (tabItems) {
+    for (let i = 0; i < tabItems.length; i++) {
+      tabItems[i].addEventListener('click', function () {
         tabItems.forEach(el => {
           el.classList.remove('active');
         });
@@ -139,7 +146,7 @@
         menuDinamic.classList.remove('active');
       })
     }
-   
+
   }
 
 })();
@@ -150,15 +157,22 @@
 (() => {
 
   let tabItemsElements = document.querySelectorAll('.js_menu_link span');
-  let menuDinamic = document.querySelector('.js_menu_dinamic')
+  let menuDinamic = document.querySelector('.js_menu_dinamic');
+  let back = document.querySelector('.js_menu_dinamic_mobail_back');
 
-  if(tabItemsElements){
-    for(let i = 0; i < tabItemsElements.length; i++){
-      tabItemsElements[i].addEventListener('click', function(){
+  if (tabItemsElements) {
+    for (let i = 0; i < tabItemsElements.length; i++) {
+      tabItemsElements[i].addEventListener('click', function () {
         menuDinamic.classList.add('active');
       })
     }
-   
+
+  }
+
+  if(back){
+    back.addEventListener('click',function(){
+      menuDinamic.classList.remove('active');
+    })
   }
 
 })();
@@ -167,16 +181,16 @@
 (() => {
 
   let backerBox = document.querySelector('.js_backer');
-  let backerClose   = document.querySelector('.js_backer_box_head_close');
+  let backerClose = document.querySelector('.js_backer_box_head_close');
   let backerButton = document.querySelector('.js_header_box_right_backet');
   let backerBoxEl = document.querySelector('.js_backer_box');
-  
 
-  if(backerButton){
-    backerButton.addEventListener('click', function(){
+
+  if (backerButton) {
+    backerButton.addEventListener('click', function () {
       backerBox.classList.toggle('active');
     })
-    backerClose.addEventListener('click', function(){
+    backerClose.addEventListener('click', function () {
       backerBox.classList.remove('active');
     })
     backerBox.style.height = document.body.scrollHeight - 96 + 'px';
@@ -208,16 +222,16 @@
 (() => {
 
   let likeBox = document.querySelector('.js_like');
-  let likeClose   = document.querySelector('.js_like_box_head_close');
+  let likeClose = document.querySelector('.js_like_box_head_close');
   let likeButton = document.querySelector('.js_button_like');
   let likeBoxEl = document.querySelector('.js_like_box');
-  
 
-  if(likeButton){
-    likeButton.addEventListener('click', function(){
+
+  if (likeButton) {
+    likeButton.addEventListener('click', function () {
       likeBox.classList.toggle('active');
     })
-    likeClose.addEventListener('click', function(){
+    likeClose.addEventListener('click', function () {
       likeBox.classList.remove('active');
     })
     likeBox.style.height = document.body.scrollHeight - 96 + 'px';
@@ -246,17 +260,17 @@
 //search pop_up
 (() => {
 
-  let searchBox     = document.querySelector('.js_search');
-  let searchClose   = document.querySelector('.js_search_box_flex_close');
+  let searchBox = document.querySelector('.js_search');
+  let searchClose = document.querySelector('.js_search_box_flex_close');
   let searchButton = document.querySelector('.js_button_search');
   let searchBoxEl = document.querySelector('.js_search_box');
-  
 
-  if(searchButton){
-    searchButton.addEventListener('click', function(){
+
+  if (searchButton) {
+    searchButton.addEventListener('click', function () {
       searchBox.classList.toggle('active');
     })
-    searchClose.addEventListener('click', function(){
+    searchClose.addEventListener('click', function () {
       searchBox.classList.remove('active');
     })
     searchBox.style.height = document.body.scrollHeight + 'px';
@@ -277,16 +291,16 @@
 (() => {
 
   let profileBox = document.querySelector('.js_profile');
-  let profileClose   = document.querySelector('.js_profile_box_head_close');
+  let profileClose = document.querySelector('.js_profile_box_head_close');
   let profileButton = document.querySelector('.js_button_profile');
   let profileBoxEl = document.querySelector('.js_profile_box');
-  
 
-  if(profileButton){
-    profileButton.addEventListener('click', function(){
+
+  if (profileButton) {
+    profileButton.addEventListener('click', function () {
       profileBox.classList.toggle('active');
     })
-    profileClose.addEventListener('click', function(){
+    profileClose.addEventListener('click', function () {
       profileBox.classList.remove('active');
     })
     profileBox.style.height = document.body.scrollHeight - 96 + 'px';
@@ -310,4 +324,11 @@
 
 
 })();
+
+
+
+//like pop_up
+
+
+
 
