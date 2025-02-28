@@ -26,6 +26,9 @@
   let cityBox = document.querySelector('.js_header_place_hidden');
   let cityBoxItem = document.querySelectorAll('.js_header_place_hidden span');
   let cityBoxElem = document.querySelector('.js_header_place_hidden_box');
+  let cityButtonMobail = document.querySelector('.js_menu_mobail_point');
+   let cityCloseMobail = document.querySelector('.js_header_box_right_place_hidden_box_head_close');
+   let cityBack = document.querySelector('.js_header_box_right_place_hidden_box_head_back');
 
   if (city) {
     city.addEventListener('click', function () {
@@ -53,15 +56,32 @@
 
       })
     }
-
+  }
+  if(cityButtonMobail){
+    cityButtonMobail.addEventListener('click', function(){
+      cityBox.classList.add('active');
+    })
+  }
+  if(cityCloseMobail){
+    cityCloseMobail.addEventListener('click', function(){
+      cityBox.classList.remove('active');
+    })
+  }
+  if(cityBack){
+    cityBack.addEventListener('click', function(){
+      cityBox.classList.remove('active');
+    })
   }
 
   document.addEventListener('click', (e) => {
     const lkEl = e.composedPath().includes(city);
     const gambLk = e.composedPath().includes(cityBoxElem);
+    const gambLkMobail = e.composedPath().includes(cityButtonMobail)
     if (!lkEl && !gambLk) {
-      cityBox.classList.remove('active');
-      city.classList.remove('active');
+      if(!gambLkMobail){
+        cityBox.classList.remove('active');
+        city.classList.remove('active');
+      }
     }
 
   })
@@ -85,7 +105,10 @@
   let menu = document.querySelector('.js_menu');
   let menuDinamic = document.querySelector('.js_menu_dinamic')
   let menuBox = document.querySelector('.js_menu_box');
-  let menuCloseMobail = document.querySelector('.js_menu_dinamic_mobail_close')
+  let menuCloseMobail = document.querySelector('.js_menu_dinamic_mobail_close');
+  let profileBack = document.querySelector('.js_profile_box_head_back');
+  let searchBack   = document.querySelector('.js_search_box_flex_back');
+  let cityBack = document.querySelector('.js_header_box_right_place_hidden_box_head_back');
 
 
   if (burger) {
@@ -99,9 +122,16 @@
   document.addEventListener('click', (e) => {
     const lkEl = e.composedPath().includes(burger);
     const gambLk = e.composedPath().includes(menuBox);
+    const profileBackM = e.composedPath().includes(profileBack);
+    const searchBackM = e.composedPath().includes(searchBack);
+    const cityBackM = e.composedPath().includes(cityBack);
     if (!lkEl && !gambLk) {
-      menu.classList.remove('active');
-      menuDinamic.classList.remove('active');
+      if(!profileBackM && !searchBackM){
+        if(!cityBackM){
+          menu.classList.remove('active');
+          menuDinamic.classList.remove('active');
+        }
+      }
     }
 
   })
@@ -274,6 +304,8 @@
   let searchClose = document.querySelector('.js_search_box_flex_close');
   let searchButton = document.querySelector('.js_button_search');
   let searchBoxEl = document.querySelector('.js_search_box');
+  let searchBack   = document.querySelector('.js_search_box_flex_back');
+  let searchButtonMobail = document.querySelector('.js_menu_mobail_search')
 
 
   if (searchButton) {
@@ -284,6 +316,17 @@
       searchBox.classList.remove('active');
     })
     searchBox.style.height = document.body.scrollHeight + 'px';
+  }
+  if(searchBack){
+    searchBack.addEventListener('click', function(){
+      searchBox.classList.remove('active');
+    })
+  }
+
+  if(searchButtonMobail){
+    searchButtonMobail.addEventListener('click',function(){
+      searchBox.classList.add('active');
+    })
   }
 
   searchBox.addEventListener('click', (e) => {
@@ -297,13 +340,15 @@
 })();
 
 
-//like pop_up
+//profile pop_up
 (() => {
 
   let profileBox = document.querySelector('.js_profile');
   let profileClose = document.querySelector('.js_profile_box_head_close');
   let profileButton = document.querySelector('.js_button_profile');
   let profileBoxEl = document.querySelector('.js_profile_box');
+  let profileButonMobail = document.querySelector('.js_menu_mobail_profile');
+  let profileBack = document.querySelector('.js_profile_box_head_back')
 
 
   if (profileButton) {
@@ -321,13 +366,30 @@
     if (!lkEl) {
       profileBox.classList.remove('active');
     }
-
   })
+
+  if(profileButonMobail){
+    profileButonMobail.addEventListener('click', function(){
+      profileBox.classList.add('active');
+    })
+  }
+  if(profileBack){
+    profileBack.addEventListener('click', function(){
+      profileBox.classList.remove('active');
+    })
+  }
+  
+
+
   document.addEventListener('click', (e) => {
     const lkEl = e.composedPath().includes(profileBoxEl);
     const gambLk = e.composedPath().includes(profileButton);
+    const profileButtonM = e.composedPath().includes(profileButonMobail);
     if (!lkEl && !gambLk) {
-      profileBox.classList.remove('active');
+      if(!profileButtonM){
+        profileBox.classList.remove('active');
+      }
+     
     }
 
   })
