@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Nyght';
+  src: url('font/NyghtSerif-RegularItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -567,6 +575,7 @@ footer {
   margin-bottom: 18px;
   display: block;
   transition: .6s;
+  cursor: pointer;
 }
 
 .footer_box_item a:hover,
@@ -798,6 +807,15 @@ footer {
   height: 100vh;
 }
 
+.pop_up_box.loyalty_program_registration {
+  top: 0;
+  display: none;
+}
+
+.pop_up_box.loyalty_program_registration.active {
+  display: block;
+}
+
 .pop_up_box_head {
   display: flex;
   align-items: center;
@@ -864,10 +882,12 @@ footer {
 
 .pop_up_box_head span {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 38px;
   line-height: 115%;
   color: #383838;
   display: block;
+  max-width: 436px;
+  width: 100%;
 }
 
 .pop_up_box_body {
@@ -1834,6 +1854,263 @@ footer {
   justify-content: center;
 }
 
+.loyalty .pop_up_box_head {
+  height: 96px;
+  border-bottom: none;
+  height: 152px;
+}
+
+.loyalty .pop_up_box_body {
+  padding-top: 0px;
+}
+
+.loyalty .pop_up_box_body p {
+  font-size: 24px;
+  line-height: 150%;
+  color: #383838;
+}
+
+.loyalty_program_button {
+  max-width: 328px;
+  width: 100%;
+  height: 70px;
+  background: #DA6265;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 36px;
+  cursor: pointer;
+}
+
+.loyalty_program_flex {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 25px;
+}
+
+.loyalty_program_flex b {
+  font-size: 16px;
+  color: #343434;
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+
+.loyalty_program_flex span {
+  font-size: 60px;
+  color: #383838;
+}
+
+.loyalty_program_discription {
+  color: #343434;
+  font-size: 16px;
+  margin-top: 15px;
+  max-width: 234px;
+  width: 100%;
+  margin-bottom: 41px;
+}
+
+.loyalty .pop_up_box_body a {
+  color: #DA6265;
+  margin-top: 36px;
+  font-weight: 600;
+  font-size: 18px;
+  display: block;
+}
+
+.loyalty_program_registration input {
+  border: 1px solid #C0C1BD;
+  width: 100%;
+  height: 92px;
+  padding: 0 18px;
+  margin-bottom: 23px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #343434;
+}
+
+.loyalty_program_registration input::placeholder {
+  font-size: 18px;
+  line-height: 24px;
+  color: #808080;
+}
+
+.loyalty_program_registration_box {
+  display: flex;
+  margin-top: 15px;
+}
+
+.loyalty_program_registration_box p {
+  color: #808080 !important;
+  font-size: 12px !important;
+}
+
+.loyalty_program_registration_box div {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+
+.loyalty_program_registration_box input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0px !important;
+}
+
+.loyalty_program_registration_box input[type="checkbox"]:checked+label {
+  background: #DA6265;
+}
+
+.loyalty_program_registration_box label {
+  width: 16px;
+  height: 16px;
+  background: #D9D9D9;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.loyalty_program_registration_box a {
+  margin-top: 0px !important;
+  font-size: 12px !important;
+}
+
+.pop_up_box_body input[type="submit"] {
+  margin-top: 47px;
+  background: #DA6265;
+  border: none;
+  max-width: 329px;
+  height: 70px;
+  color: #fff;
+}
+
+.about {
+  margin-top: 140px;
+}
+
+.about img {
+  width: 538px;
+}
+
+.about_tittle {
+  margin-top: 60px;
+  font-weight: 500;
+  font-size: 25px;
+  color: #343434;
+}
+
+.about span.about_subtittle {
+  font-size: 20px;
+  color: #343434;
+  margin-top: 5px;
+  display: block;
+}
+
+.about p.about_text {
+  font-size: 20px;
+  color: #343434;
+  margin-top: 45px;
+}
+
+.about_box {
+  display: flex;
+  justify-content: space-between;
+  margin: 120px 0 150px 0;
+}
+
+.about_box_item {
+  display: flex;
+  flex-direction: column;
+  width: calc(25% - 40px);
+}
+
+.about_box_item p {
+  font-size: 26px;
+  color: #343434;
+}
+
+.about_box_item p:nth-child(3) {
+  margin-left: 20%;
+}
+
+.about_box_item span {
+  font-family: 'Nyght';
+  font-size: 159px;
+  color: #E31E23;
+  font-style: italic;
+  margin-left: 60px;
+  position: relative;
+}
+
+.about_box .about_box_item p:nth-child(1) {
+  margin-bottom: -60px;
+}
+
+.about_box .about_box_item p:nth-child(3) {
+  margin-top: -30px;
+}
+
+.about_box .about_box_item:nth-child(4) p:nth-child(1) {
+  opacity: 0;
+}
+
+.about_box .about_box_item:nth-child(1) span::after {
+  content: '%';
+  font-family: 'Nyght';
+  font-size: 97px;
+  color: #E31E23;
+  font-style: italic;
+  position: absolute;
+  top: 20px;
+}
+
+.about_box .about_box_item:nth-child(1) span {
+  margin-left: 40px;
+}
+
+.about_flex {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 140px;
+}
+
+.about_flex p {
+  width: calc((100%/3) - 120px);
+  font-size: 32px;
+  line-height: 120%;
+  color: #343434;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 51px;
+}
+
+.about_headling {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 110px;
+  border-top: 1px solid #B5B5B5
+}
+
+.about_headling span {
+  font-size: 50px;
+  font-weight: 500;
+  color: #343434;
+  display: block;
+  margin-right: 10px;
+}
+
 
 @media screen and (max-width: 1600px) {
   .search_box {
@@ -1852,6 +2129,19 @@ footer {
   .search_box_body_right .bestsellers_box_item_size {
     top: 300px;
     height: 130px;
+  }
+
+  .about_box {
+    flex-wrap: wrap;
+  }
+
+  .about_box_item {
+    width: calc(50% - 90px);
+  }
+
+  .about_box .about_box_item:nth-child(3),
+  .about_box .about_box_item:nth-child(4) {
+    margin-top: 65px;
   }
 }
 
@@ -1957,6 +2247,29 @@ footer {
   .search_box_body_right .bestsellers_box_item {
     width: calc(100% / 3 - 13px);
   }
+
+  .about_box_item span {
+    font-size: 109px;
+  }
+
+  .about_box .about_box_item:nth-child(1) span::after {
+    font-size: 57px;
+    top: 10px;
+  }
+
+  .about_box .about_box_item p:nth-child(1) {
+    margin-bottom: -40px;
+  }
+
+  .about_box .about_box_item p:nth-child(3) {
+    margin-top: -15px;
+  }
+
+  .about_flex p {
+    width: calc((100% / 3) - 50px);
+    font-size: 22px;
+  }
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -2473,6 +2786,72 @@ footer {
   .catalog_box .bestsellers_box_item:nth-child(10) .bestsellers_box_item_size {
     top: 420px;
   }
+
+  .about {
+    margin-top: 80px;
+  }
+
+  .about img {
+    width: 338px;
+  }
+
+  .about_tittle {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+
+  .about span.about_subtittle {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .about p.about_text {
+    font-size: 18px;
+    margin-top: 25px;
+  }
+
+  .about_box {
+    margin: 80px 0 100px 0;
+  }
+
+  .about_box_item span {
+    font-size: 69px;
+  }
+
+  .about_box_item p {
+    font-size: 18px;
+  }
+
+  .about_box .about_box_item:nth-child(1) span::after {
+    font-size: 37px;
+    top: 10px;
+  }
+
+  .about_box_item p:nth-child(3) {
+    margin-left: 30%;
+  }
+
+  .about h2 {
+    font-size: 31px;
+  }
+
+  .about_flex p {
+    width: calc((100% / 3) - 20px);
+    font-size: 18px;
+  }
+
+  .about_headling span {
+    font-size: 30px;
+    margin-right: 10px;
+  }
+
+  .about_headling img {
+    width: 120px;
+  }
+
+  .about_headling {
+    padding-top: 70px;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -2668,6 +3047,127 @@ footer {
   .accordion_header {
     font-size: 20px;
     padding: 20px 0;
+  }
+
+  .pop_up_box_head span {
+    font-size: 18px;
+    max-width: 236px;
+  }
+
+  .loyalty .pop_up_box_head {
+    height: 96px;
+  }
+
+  .loyalty .pop_up_box_body p {
+    font-size: 18px;
+  }
+
+  .loyalty_program_button {
+    max-width: 228px;
+    height: 50px;
+    font-size: 16px;
+    margin-top: 26px;
+  }
+
+  .loyalty_program_flex {
+    margin-top: 15px;
+  }
+
+  .loyalty_program_flex span {
+    font-size: 36px;
+  }
+
+  .loyalty_program_discription {
+    font-size: 14px;
+    margin-top: 10px;
+    max-width: 224px;
+    margin-bottom: 21px;
+  }
+
+  .loyalty .pop_up_box_body a {
+    margin-top: 26px;
+    font-size: 16px;
+  }
+
+  .about {
+    margin-top: 60px;
+  }
+
+  .about img {
+    width: 138px;
+  }
+
+  .about_tittle {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .about span.about_subtittle {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .about p.about_text {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .about_box {
+    margin: 40px 0 60px 0;
+  }
+
+  .about_box_item span {
+    font-size: 49px;
+  }
+
+  .about_box_item {
+    width: calc(50% - 10px);
+  }
+
+  .about_box_item span {
+    margin-left: 45px;
+  }
+
+  .about_box .about_box_item p:nth-child(1) {
+    margin-bottom: -20px;
+  }
+
+  .about_box .about_box_item p:nth-child(3) {
+    margin-top: -10px;
+  }
+
+  .about_flex {
+    margin-top: 40px;
+    margin-bottom: 70px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .about_flex p {
+    width: 100%;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .about_headling {
+    padding-top: 0px;
+    border-top: none;
+    margin-bottom: -45px;
+  }
+
+  .about h2 {
+    font-size: 26px;
+  }
+
+  .about_headling span {
+    font-size: 26px;
+    margin-right: 10px;
+  }
+
+  .about_headling img {
+    width: 90px;
   }
 }
 
@@ -3056,28 +3556,76 @@ footer {
     padding: 0 0px 0 10px;
     height: 66px;
   }
+
   .pop_up_box_head_close {
     top: 21px;
     right: 10px;
-}
-.pop_up_box_body {
-  padding: 20px 0px 30px 10px;
-}
-.accordion_header::after {
-  top: 20px;
-  color: #383838;
-  transition: .6s;
-}
-.accordion_header {
-  font-size: 18px;
-  padding: 20px 0;
-  padding-right: 15px;
-}
-.accordion_body b {
-  font-size: 16px;
-  margin-bottom: 20px;
-  margin-top: 15px;
-}
+  }
+
+  .pop_up_box_body {
+    padding: 20px 0px 30px 10px;
+  }
+
+  .accordion_header::after {
+    top: 20px;
+    color: #383838;
+    transition: .6s;
+  }
+
+  .accordion_header {
+    font-size: 18px;
+    padding: 20px 0;
+    padding-right: 15px;
+  }
+
+  .accordion_body b {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+
+  .loyalty_program_registration input {
+    height: 62px;
+    padding: 0 12px;
+    margin-bottom: 13px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .loyalty_program_registration input::placeholder {
+    font-size: 12px;
+  }
+
+  .pop_up_box_body input[type="submit"] {
+    margin-top: 37px;
+    height: 60px;
+    width: 100%;
+    max-width: none;
+  }
+
+  .about_box_item {
+    width: 100%;
+  }
+
+  .about_box_item p:nth-child(3) {
+    margin-left: 60px;
+  }
+
+  .about_box .about_box_item:nth-child(3),
+  .about_box .about_box_item:nth-child(4),
+  .about_box .about_box_item:nth-child(2) {
+    margin-top: 15px;
+  }
+
+  .about_box .about_box_item:nth-child(2),
+  .about_box .about_box_item:nth-child(4) {
+    margin-left: auto;
+    width: 200px;
+  }
+
+  .about_box .about_box_item p:nth-child(3) {
+    margin-top: 0px;
+  }
 
 }
 
@@ -3212,6 +3760,20 @@ footer {
   .catalog_head_filter::after {
     display: none;
   }
+
+  .about_headling span {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .about_flex p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .about_flex {
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
 
 }
 

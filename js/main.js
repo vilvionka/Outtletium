@@ -27,8 +27,8 @@
   let cityBoxItem = document.querySelectorAll('.js_header_place_hidden span');
   let cityBoxElem = document.querySelector('.js_header_place_hidden_box');
   let cityButtonMobail = document.querySelector('.js_menu_mobail_point');
-   let cityCloseMobail = document.querySelector('.js_header_box_right_place_hidden_box_head_close');
-   let cityBack = document.querySelector('.js_header_box_right_place_hidden_box_head_back');
+  let cityCloseMobail = document.querySelector('.js_header_box_right_place_hidden_box_head_close');
+  let cityBack = document.querySelector('.js_header_box_right_place_hidden_box_head_back');
 
   if (city) {
     city.addEventListener('click', function () {
@@ -57,18 +57,18 @@
       })
     }
   }
-  if(cityButtonMobail){
-    cityButtonMobail.addEventListener('click', function(){
+  if (cityButtonMobail) {
+    cityButtonMobail.addEventListener('click', function () {
       cityBox.classList.add('active');
     })
   }
-  if(cityCloseMobail){
-    cityCloseMobail.addEventListener('click', function(){
+  if (cityCloseMobail) {
+    cityCloseMobail.addEventListener('click', function () {
       cityBox.classList.remove('active');
     })
   }
-  if(cityBack){
-    cityBack.addEventListener('click', function(){
+  if (cityBack) {
+    cityBack.addEventListener('click', function () {
       cityBox.classList.remove('active');
     })
   }
@@ -78,7 +78,7 @@
     const gambLk = e.composedPath().includes(cityBoxElem);
     const gambLkMobail = e.composedPath().includes(cityButtonMobail)
     if (!lkEl && !gambLk) {
-      if(!gambLkMobail){
+      if (!gambLkMobail) {
         cityBox.classList.remove('active');
         city.classList.remove('active');
       }
@@ -107,7 +107,7 @@
   let menuBox = document.querySelector('.js_menu_box');
   let menuCloseMobail = document.querySelector('.js_menu_dinamic_mobail_close');
   let profileBack = document.querySelector('.js_profile_box_head_back');
-  let searchBack   = document.querySelector('.js_search_box_flex_back');
+  let searchBack = document.querySelector('.js_search_box_flex_back');
   let cityBack = document.querySelector('.js_header_box_right_place_hidden_box_head_back');
 
 
@@ -126,8 +126,8 @@
     const searchBackM = e.composedPath().includes(searchBack);
     const cityBackM = e.composedPath().includes(cityBack);
     if (!lkEl && !gambLk) {
-      if(!profileBackM && !searchBackM){
-        if(!cityBackM){
+      if (!profileBackM && !searchBackM) {
+        if (!cityBackM) {
           menu.classList.remove('active');
           menuDinamic.classList.remove('active');
         }
@@ -143,8 +143,8 @@
     }
 
   })
-  if(menuCloseMobail){
-    menuCloseMobail.addEventListener('click',function(){
+  if (menuCloseMobail) {
+    menuCloseMobail.addEventListener('click', function () {
       menu.classList.remove('active');
       menuDinamic.classList.remove('active');
     })
@@ -199,8 +199,8 @@
 
   }
 
-  if(back){
-    back.addEventListener('click',function(){
+  if (back) {
+    back.addEventListener('click', function () {
       menuDinamic.classList.remove('active');
     })
   }
@@ -268,8 +268,8 @@
     likeBox.style.height = document.body.scrollHeight - 96 + 'px';
   }
 
-  if(likeButtonMobail){
-    likeButtonMobail.addEventListener('click',function(){
+  if (likeButtonMobail) {
+    likeButtonMobail.addEventListener('click', function () {
       likeBox.classList.add('active');
     })
   }
@@ -286,7 +286,7 @@
     const gambLk = e.composedPath().includes(likeButton);
     const likeButtonM = e.composedPath().includes(likeButtonMobail);
     if (!lkEl && !gambLk) {
-      if(!likeButtonMobail){
+      if (!likeButtonMobail) {
         likeBox.classList.remove('active');
       }
     }
@@ -304,7 +304,7 @@
   let searchClose = document.querySelector('.js_search_box_flex_close');
   let searchButton = document.querySelector('.js_button_search');
   let searchBoxEl = document.querySelector('.js_search_box');
-  let searchBack   = document.querySelector('.js_search_box_flex_back');
+  let searchBack = document.querySelector('.js_search_box_flex_back');
   let searchButtonMobail = document.querySelector('.js_menu_mobail_search')
 
 
@@ -317,14 +317,14 @@
     })
     searchBox.style.height = document.body.scrollHeight + 'px';
   }
-  if(searchBack){
-    searchBack.addEventListener('click', function(){
+  if (searchBack) {
+    searchBack.addEventListener('click', function () {
       searchBox.classList.remove('active');
     })
   }
 
-  if(searchButtonMobail){
-    searchButtonMobail.addEventListener('click',function(){
+  if (searchButtonMobail) {
+    searchButtonMobail.addEventListener('click', function () {
       searchBox.classList.add('active');
     })
   }
@@ -368,17 +368,17 @@
     }
   })
 
-  if(profileButonMobail){
-    profileButonMobail.addEventListener('click', function(){
+  if (profileButonMobail) {
+    profileButonMobail.addEventListener('click', function () {
       profileBox.classList.add('active');
     })
   }
-  if(profileBack){
-    profileBack.addEventListener('click', function(){
+  if (profileBack) {
+    profileBack.addEventListener('click', function () {
       profileBox.classList.remove('active');
     })
   }
-  
+
 
 
   document.addEventListener('click', (e) => {
@@ -386,10 +386,10 @@
     const gambLk = e.composedPath().includes(profileButton);
     const profileButtonM = e.composedPath().includes(profileButonMobail);
     if (!lkEl && !gambLk) {
-      if(!profileButtonM){
+      if (!profileButtonM) {
         profileBox.classList.remove('active');
       }
-     
+
     }
 
   })
@@ -513,6 +513,70 @@
 
 
 })();
+
+
+//loyalty_program pop_up
+(() => {
+
+  let loyalty_program = document.querySelector('.js_loyalty_program');
+  let loyalty_programClose = document.querySelector('.js_loyalty_program_box_head_close');
+  let loyalty_programButton = document.querySelector('.js_loyalty_program_button');
+  let loyalty_programBox = document.querySelector('.js_loyalty_program_box');
+
+
+  if (loyalty_programButton) {
+    loyalty_programButton.addEventListener('click', function () {
+      loyalty_program.classList.toggle('active');
+    })
+    loyalty_programClose.addEventListener('click', function () {
+      loyalty_program.classList.remove('active');
+    })
+    loyalty_program.style.height = document.body.scrollHeight - 96 + 'px';
+  }
+
+  loyalty_program.addEventListener('click', (e) => {
+    const lkEl = e.composedPath().includes(loyalty_programBox);
+    if (!lkEl) {
+      loyalty_program.classList.remove('active');
+    }
+
+  })
+  document.addEventListener('click', (e) => {
+    const lkEl = e.composedPath().includes(loyalty_programBox);
+    const gambLk = e.composedPath().includes(loyalty_programButton);
+    if (!lkEl && !gambLk) {
+      loyalty_program.classList.remove('active');
+    }
+
+  })
+
+
+})();
+
+
+//loyalty_program_registration pop_up
+(() => {
+
+  let loyalty_program_registrarion = document.querySelector('.loyalty_program_registration');
+  let loyalty_programRegistrationClose = document.querySelector('.js_loyalty_program_registration_box_head_close');
+  let loyalty_programRegistrationButton = document.querySelector('.js_loyalty_program_registration_button');
+
+
+
+  if (loyalty_programRegistrationButton) {
+    loyalty_programRegistrationButton.addEventListener('click', function () {
+      loyalty_program_registrarion.classList.toggle('active');
+    })
+    loyalty_programRegistrationClose.addEventListener('click', function () {
+      loyalty_program_registrarion.classList.remove('active');
+    })
+
+  }
+
+
+})();
+
+
 
 
 
