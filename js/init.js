@@ -61,10 +61,17 @@ $('.catalog_head_slider').slick({
 
 
 $('.main_slider').slick({
+  infinite: false,
+  breakpoint: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: false,
+  arrows: false,
   responsive: [
     {
       breakpoint: 500,
       settings: {
+        nfinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
@@ -177,8 +184,8 @@ $('.card_box_slider_big').slick({
   arrows: false,
   fade: false,
   asNavFor: '.card_box_slider_small'
-  });
-  $('.card_box_slider_small').slick({
+});
+$('.card_box_slider_small').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   asNavFor: '.card_box_slider_big',
@@ -186,7 +193,7 @@ $('.card_box_slider_big').slick({
   centerMode: false,
   focusOnSelect: true,
   arrows: false,
-  });
+});
 
 
 

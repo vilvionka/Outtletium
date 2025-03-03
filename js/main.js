@@ -1,23 +1,28 @@
 //card animation size box
 (() => {
-  let items = document.querySelectorAll('.js_bestsellers_img');
 
-
-  if (items) {
-    for (let i = 0; i < items.length; i++) {
-      items[i].addEventListener('mouseover', function () {
-        this.querySelector('.bestsellers_box_item_size').classList.add('active')
-      });
-      items[i].addEventListener('mouseout', function () {
-        this.querySelector('.bestsellers_box_item_size').classList.remove('active')
-      })
-
-    }
+  let app = {};
+  app.init = function () {
+    app.cardAnimation();
   }
 
-
+  app.cardAnimation = function () {
+    let items = document.querySelectorAll('.js_bestsellers_img');
+    if (items) {
+      for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener('mouseover', function () {
+          this.querySelector('.bestsellers_box_item_size').classList.add('active')
+        });
+        items[i].addEventListener('mouseout', function () {
+          this.querySelector('.bestsellers_box_item_size').classList.remove('active')
+        })
+      }
+    }
+  }
+  app.init();
 
 })();
+
 
 // city header choise
 
@@ -542,7 +547,7 @@
       }
     })
   }
-  
+
   document.addEventListener('click', (e) => {
     const lkEl = e.composedPath().includes(loyalty_programBox);
     const gambLk = e.composedPath().includes(loyalty_programButton);
@@ -575,6 +580,36 @@
 
   }
 
+
+})();
+
+
+//change src main_slider
+(() => {
+
+  let imgSlider = document.querySelectorAll('.js_main_slider_item_img');
+
+
+  function changeSlider() {
+    if (imgSlider) {
+      if(window.innerWidth < 500){
+        for (let i = 0; i < imgSlider.length; i++) {
+          let a = i + 1;
+            imgSlider[i].src = `${'./img/img/main_slider/' + a + 'm.png'}`
+        }
+      }
+      if(window.innerWidth > 500){
+        for (let i = 0; i < imgSlider.length; i++) {
+          let a = i + 1;
+            imgSlider[i].src = `${'./img/img/main_slider/' + a + '.png'}`
+        }
+      }
+
+    }
+  }
+  changeSlider();
+
+  window.addEventListener('resize', () => { changeSlider(); })
 
 })();
 

@@ -69,7 +69,8 @@ main {
 }
 
 .main_slider {
-  display: none;
+  display: block;
+  width: 100%;
 }
 
 main img {
@@ -1841,6 +1842,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .loyalty .pop_up_box_head {
