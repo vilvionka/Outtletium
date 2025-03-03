@@ -171,5 +171,21 @@ $(function () {
   var accordion = new Accordion($('.payment_accordion'), false);
 });
 
+$('.card_box_slider_big').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: false,
+  asNavFor: '.card_box_slider_small'
+  });
+  $('.card_box_slider_small').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.card_box_slider_big',
+  dots: false,
+  centerMode: false,
+  focusOnSelect: true
+  });
+
 
 

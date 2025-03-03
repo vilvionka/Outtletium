@@ -534,13 +534,15 @@
     loyalty_program.style.height = document.body.scrollHeight - 96 + 'px';
   }
 
-  loyalty_program.addEventListener('click', (e) => {
-    const lkEl = e.composedPath().includes(loyalty_programBox);
-    if (!lkEl) {
-      loyalty_program.classList.remove('active');
-    }
-
-  })
+  if (loyalty_program) {
+    loyalty_program.addEventListener('click', (e) => {
+      const lkEl = e.composedPath().includes(loyalty_programBox);
+      if (!lkEl) {
+        loyalty_program.classList.remove('active');
+      }
+    })
+  }
+  
   document.addEventListener('click', (e) => {
     const lkEl = e.composedPath().includes(loyalty_programBox);
     const gambLk = e.composedPath().includes(loyalty_programButton);
