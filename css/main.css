@@ -3392,6 +3392,8 @@ footer {
   .card_box_slider_big_item a{
     width: 23px;
     height: 27px;
+    top: 10px;
+    right: 10px;
   }
 }
 
