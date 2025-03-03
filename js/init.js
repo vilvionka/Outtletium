@@ -184,7 +184,8 @@ $('.card_box_slider_big').slick({
   asNavFor: '.card_box_slider_big',
   dots: false,
   centerMode: false,
-  focusOnSelect: true
+  focusOnSelect: true,
+  arrows: false,
   });
 
 

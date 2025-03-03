@@ -3495,6 +3495,7 @@ footer {
   .bestsellers {
     width: 100%;
   }
+  
 
   .bestsellers_box.bestsellers_box_slider {
     width: 100%;
@@ -3857,6 +3858,7 @@ footer {
 
   .card_box_slider_small {
     margin: 10px 0px 0 0px;
+   
   }
 
   .card_box_slider_small_item div {
