@@ -1,27 +1,3 @@
-//card animation size box
-(() => {
-
-  let app = {};
-  app.init = function () {
-    app.cardAnimation();
-  }
-
-  app.cardAnimation = function () {
-    let items = document.querySelectorAll('.js_bestsellers_img');
-    if (items) {
-      for (let i = 0; i < items.length; i++) {
-        items[i].addEventListener('mouseover', function () {
-          this.querySelector('.bestsellers_box_item_size').classList.add('active')
-        });
-        items[i].addEventListener('mouseout', function () {
-          this.querySelector('.bestsellers_box_item_size').classList.remove('active')
-        })
-      }
-    }
-  }
-  app.init();
-
-})();
 
 
 // city header choise
@@ -414,134 +390,7 @@
 
 })();
 
-//delivery pop_up
-(() => {
 
-  let delivery = document.querySelector('.js_delivery');
-  let deliveryClose = document.querySelector('.js_delivery_box_head_close');
-  let deliveryButton = document.querySelector('.js_delivery_button');
-  let deliveryBox = document.querySelector('.js_delivery_box');
-
-
-  if (deliveryButton) {
-    deliveryButton.addEventListener('click', function () {
-      delivery.classList.toggle('active');
-    })
-    deliveryClose.addEventListener('click', function () {
-      delivery.classList.remove('active');
-    })
-    delivery.style.height = document.body.scrollHeight - 96 + 'px';
-  }
-  if (delivery) {
-    delivery.addEventListener('click', (e) => {
-      const lkEl = e.composedPath().includes(deliveryBox);
-      if (!lkEl) {
-        delivery.classList.remove('active');
-      }
-
-    })
-  }
-
-  document.addEventListener('click', (e) => {
-    if (deliveryBox) {
-      const lkEl = e.composedPath().includes(deliveryBox);
-      const gambLk = e.composedPath().includes(deliveryButton);
-      if (!lkEl && !gambLk) {
-        delivery.classList.remove('active');
-      }
-    }
-
-  })
-
-
-})();
-
-
-
-//returnGoods pop_up
-(() => {
-
-  let returnGoods = document.querySelector('.js_returnGoods');
-  let returnGoodsClose = document.querySelector('.js_returnGoods_box_head_close');
-  let returnGoodsButton = document.querySelector('.js_returnGoods_button');
-  let returnGoodsBox = document.querySelector('.js_returnGoods_box');
-
-
-  if (returnGoodsButton) {
-    returnGoodsButton.addEventListener('click', function () {
-      returnGoods.classList.toggle('active');
-    })
-    returnGoodsClose.addEventListener('click', function () {
-      returnGoods.classList.remove('active');
-    })
-    returnGoods.style.height = document.body.scrollHeight - 96 + 'px';
-  }
-
-  if (returnGoods) {
-    returnGoods.addEventListener('click', (e) => {
-      const lkEl = e.composedPath().includes(returnGoodsBox);
-      if (!lkEl) {
-        returnGoods.classList.remove('active');
-      }
-    })
-  }
-
-  document.addEventListener('click', (e) => {
-    if (returnGoodsBox) {
-      const lkEl = e.composedPath().includes(returnGoodsBox);
-      const gambLk = e.composedPath().includes(returnGoodsButton);
-      if (!lkEl && !gambLk) {
-        returnGoods.classList.remove('active');
-      }
-    }
-
-  })
-
-
-})();
-
-
-//payment pop_up
-(() => {
-
-  let payment = document.querySelector('.js_payment');
-  let paymentClose = document.querySelector('.js_payment_box_head_close');
-  let paymentButton = document.querySelector('.js_payment_button');
-  let paymentBox = document.querySelector('.js_payment_box');
-
-
-  if (paymentButton) {
-    paymentButton.addEventListener('click', function () {
-      payment.classList.toggle('active');
-    })
-    paymentClose.addEventListener('click', function () {
-      payment.classList.remove('active');
-    })
-    payment.style.height = document.body.scrollHeight - 96 + 'px';
-  }
-
-  if (payment) {
-    payment.addEventListener('click', (e) => {
-      const lkEl = e.composedPath().includes(paymentBox);
-      if (!lkEl) {
-        payment.classList.remove('active');
-      }
-    })
-  }
-
-  document.addEventListener('click', (e) => {
-    if (paymentBox) {
-      const lkEl = e.composedPath().includes(paymentBox);
-      const gambLk = e.composedPath().includes(paymentButton);
-      if (!lkEl && !gambLk) {
-        payment.classList.remove('active');
-      }
-    }
-
-  })
-
-
-})();
 
 
 //loyalty_program pop_up
@@ -609,35 +458,6 @@
 
 })();
 
-
-//change src main_slider
-(() => {
-
-  let imgSlider = document.querySelectorAll('.js_main_slider_item_img');
-
-
-  function changeSlider() {
-    if (imgSlider) {
-      if (window.innerWidth < 500) {
-        for (let i = 0; i < imgSlider.length; i++) {
-          let a = i + 1;
-          imgSlider[i].src = `${'./img/img/main_slider/' + a + 'm.png'}`
-        }
-      }
-      if (window.innerWidth > 500) {
-        for (let i = 0; i < imgSlider.length; i++) {
-          let a = i + 1;
-          imgSlider[i].src = `${'./img/img/main_slider/' + a + '.png'}`
-        }
-      }
-
-    }
-  }
-  changeSlider();
-
-  window.addEventListener('resize', () => { changeSlider(); })
-
-})();
 
 
 //pickup pop_up
@@ -761,6 +581,7 @@
   let courierBtn = document.querySelector('.js_courier_btn');
   let courierBoxEl = document.querySelector('.js_courier_box');
   let courierCloseAdd = document.querySelector('.js_courier_flex_close');
+  let courierBtnAdd = document.querySelector('.js_delivery_courier_btn');
 
 
   if (courierBtn) {
@@ -787,8 +608,11 @@
   document.addEventListener('click', (e) => {
     const lkEl = e.composedPath().includes(courierBoxEl);
     const gambLk = e.composedPath().includes(courierBtn);
+    const gambLkCourier = e.composedPath().includes(courierBtnAdd);
     if (!lkEl && !gambLk) {
-      courierBox.classList.remove('active');
+      if(!gambLkCourier){
+        courierBox.classList.remove('active');
+      }
     }
 
   })
@@ -949,4 +773,82 @@
     })
   }
 })();
+
+
+//change delivery
+(() => {
+
+  let pickUpBtn = document.querySelector('.js_delivery_pickUp_btn');
+  let pickUpBox = document.querySelector('.js_pickup');
+  let courierBtn = document.querySelector('.js_delivery_courier_btn');
+  let courierBox = document.querySelector('.js_courier');
+  let pvzBtn     = document.querySelector('.js_delivery_pvz_btn');
+  let headlingBox = document.querySelector('.js_pickup_box_info_head');
+
+
+  if (pickUpBtn) {
+    pickUpBtn.addEventListener('click', function () {
+      pickUpBox.classList.add('active');
+      headlingBox.innerHTML = 'Самовывоз'
+    })
+  }
+
+  if (courierBtn) {
+    courierBtn.addEventListener('click', function () {
+      courierBox.classList.add('active');
+    })
+  }
+  if ( pvzBtn) {
+     pvzBtn.addEventListener('click', function () {
+      pickUpBox.classList.add('active');
+      headlingBox.innerHTML = 'ПВЗ'
+    })
+  }
+
+})();
+
+
+//change delivery box
+(() => {
+
+  let deliveryBox = document.querySelector('.js_delivery');
+  let deliveryClose = document.querySelector('.js_delivery_close');
+  let deliveryBtn = document.querySelector('.js_delivery_btn');
+  let deliveryBoxEl = document.querySelector('.js_delivery_box');
+
+
+  if (deliveryBtn) {
+    deliveryBtn.addEventListener('click', function () {
+      deliveryBox.classList.toggle('active');
+    })
+    deliveryClose.addEventListener('click', function () {
+      deliveryBox.classList.remove('active');
+    })
+    
+    deliveryBox.style.height = document.body.scrollHeight - 96 + 'px';
+  }
+
+  deliveryBox.addEventListener('click', (e) => {
+    const lkEl = e.composedPath().includes(deliveryBoxEl);
+    if (!lkEl) {
+      deliveryBox.classList.remove('active');
+    }
+  })
+
+  document.addEventListener('click', (e) => {
+    const lkEl = e.composedPath().includes(deliveryBoxEl);
+    const gambLk = e.composedPath().includes(deliveryBtn);
+    if (!lkEl && !gambLk) {
+      deliveryBox.classList.remove('active');
+    }
+
+  })
+
+})();
+
+
+
+
+
+
 
