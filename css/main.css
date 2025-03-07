@@ -2226,6 +2226,10 @@ footer {
   font-size: 16px;
   color: #343434;
   margin-right: 4px;
+  cursor: pointer;
+}
+.card_box_discription_size a.active{
+  border-color: #DA6265;
 }
 
 .card_box_discription_size a:last-child,
@@ -2238,6 +2242,16 @@ footer {
   width: 45px;
   height: 45px;
   margin-right: 20px;
+  position: relative;
+}
+.card_box_discription_color a.active::after{
+   position: absolute;
+   bottom: -10px;
+   left: 0;
+   width: 100%;
+   height: 1px;
+   content: '';
+   background: #DA6265;
 }
 
 .card_box_discription_color a img {
@@ -3942,6 +3956,15 @@ footer {
     top: 155px;
     padding: 0 0px 0 10px;
   }
+  .order_box_left_payment.active .order_box_left_payment_flex {
+   flex-direction: column;
+    margin-top: 30px;
+}
+.order_box_left_payment_flex_item{
+  width: 100%;
+  margin-right: 0px;
+  margin-top: 5px;
+}
 }
 
 @media screen and (max-width: 700px) {
@@ -4901,6 +4924,9 @@ footer {
   }
 
   .order_box_left_delivery div span {
+    font-size: 16px;
+  }
+  .order_box_left_payment_flex_item{
     font-size: 16px;
   }
 }
